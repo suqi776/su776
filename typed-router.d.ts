@@ -26,7 +26,6 @@ declare module 'vue-router/auto-routes' {
     '/posts/CentOS-Mysql8.0': RouteRecordInfo<'/posts/CentOS-Mysql8.0', '/posts/CentOS-Mysql8/0', Record<never, never>, Record<never, never>>,
     '/posts/component-examples': RouteRecordInfo<'/posts/component-examples', '/posts/component-examples', Record<never, never>, Record<never, never>>,
     '/posts/hello-world': RouteRecordInfo<'/posts/hello-world', '/posts/hello-world', Record<never, never>, Record<never, never>>,
-    '/posts/markdown-examples': RouteRecordInfo<'/posts/markdown-examples', '/posts/markdown-examples', Record<never, never>, Record<never, never>>,
     '/posts/mk': RouteRecordInfo<'/posts/mk', '/posts/mk', Record<never, never>, Record<never, never>>,
     '/posts/MYSQL8.0': RouteRecordInfo<'/posts/MYSQL8.0', '/posts/MYSQL8/0', Record<never, never>, Record<never, never>>,
     '/posts/Nacos': RouteRecordInfo<'/posts/Nacos', '/posts/Nacos', Record<never, never>, Record<never, never>>,
