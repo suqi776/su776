@@ -39,7 +39,7 @@ onMounted(() => {
         <a class="card-hover-text" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> &copy; {{ new Date().getFullYear() }} Su77's Blog
       </p>
       <nav class="flex justify-center gap-4">
-        <a
+        <!-- <a
           href="https://github.com/sqsuqi/myvite"
           target="_blank"
           rel="noreferrer"
@@ -58,7 +58,7 @@ onMounted(() => {
           class="hover:text-gray-400"
         >
           Contact
-        </a>
+        </a> -->
       </nav>
       <span class="text-xs text-gray-400">本站已持续运行{{ stats.runningTime }}</span>
     </div>
