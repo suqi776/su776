@@ -12,6 +12,7 @@ const { frontmatter } = defineProps({
 const content = ref<HTMLDivElement>()
 
 const date = computed(() => {
+  console.log(frontmatter.date)
   return dayjs(frontmatter.date).format('YYYY年MM月DD日 HH:mm:ss')
 })
 

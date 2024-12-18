@@ -454,5 +454,21 @@ h6:focus .header-anchor {
 .markdown-alert.markdown-alert-important {
   background-color: rgba(var(--color-important-bg), 0.1);
 }
-    
-    
+
+
+/* code样式 */
+
+.prose :not(pre)>code {
+  border-radius: 4px;
+  padding: 3px 6px;
+  background-color: var(--my-p-bg);
+  transition: color .25s, background-color .5s;
+}
+
+.prose code::before {
+  content: '';
+}
+
+.prose code::after {
+  content: '';
+}

@@ -77,14 +77,14 @@ function blogListImagesSize() {
               {{ post.title }}
             </h2>
             <div v-if="post.tags" class="flex items-center justify-between">
-              <p class="text-sm text-gray-500 dark:text-gray-400">
-                {{ post?.tags && post.tags.join(', ') }}
-              </p>
+              <div class="text-sm text-gray-500 dark:text-gray-400 flex items-center">
+                <div class="i-carbon-tag mr-1" /> {{ post?.tags && post.tags.join(', ') }}
+              </div>
             </div>
             <div v-if="post.category" class="flex items-center justify-between">
-              <p class="text-sm text-gray-500 dark:text-gray-400">
-                {{ post?.category && post.category.join(', ') }}
-              </p>
+              <div class="text-sm text-gray-500 dark:text-gray-400 flex items-center">
+                <div class="i-carbon-category mr-1" />{{ post?.category && post.category.join(', ') }}
+              </div>
             </div>
             <p class="text-sm text-gray-500 dark:text-gray-400">
               发表于{{ post.date }}
