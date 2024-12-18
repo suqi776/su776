@@ -1,0 +1,66 @@
+/* 缩放效果 */
+
+.my-transition {
+  transition: transform .5s cubic-bezier(.25,.46,.45,.94), opacity .5s cubic-bezier(.25,.46,.45,.94);
+}
+
+.my-transition:hover {
+  transform: scale(.985);
+  opacity: 0.8;
+}
+
+/* 用户自定义变量 */
+:root {
+  --my-hover-bg: #f5f5f7;
+}
+
+.dark * {
+  --my-hover-bg: #282828;
+}
+
+/* 改变的颜色 */
+:root {
+  --my-p-bg: rgba(255, 105, 180, 0.7);
+  --my-p-color: rgba(255, 105, 180, 1);
+  --my-p-bg-1: rgba(255, 105, 180, 0.2);
+  --my-p-hover-bg: rgba(255, 105, 180, 1);
+
+  --my-p-hover-bg-dark: rgba(246, 94, 172, 1);
+}
+
+/* 改变的颜色 */
+.twikoo .el-input__inner:focus, .twikoo .el-textarea__inner:focus {
+  border-color: var(--my-p-bg) !important;
+}
+
+.twikoo .el-button:not(.el-button--primary):not(.el-button--text):active, .twikoo .el-button:not(.el-button--primary):not(.el-button--text):focus, .twikoo .el-button:not(.el-button--primary):not(.el-button--text):hover {
+  color: var(--my-p-bg) !important;
+  background-color: var(--my-p-bg-1) !important;
+  border-color: var(--my-p-bg) !important;
+}
+
+.twikoo .el-button--primary.is-disabled, .twikoo .el-button--primary.is-disabled:active, .twikoo .el-button--primary.is-disabled:focus, .twikoo .el-button--primary.is-disabled:hover {
+  color: var(--my-p-bg) !important;
+  background-color: var(--my-p-bg-1) !important;
+}
+
+.el-button--primary {
+  background-color: var(--my-p-bg) !important;
+  border-color: var(--my-p-bg) !important;
+}
+
+.twikoo .tk-comments-title svg {
+  fill: var(--my-p-bg) !important;
+}
+
+.el-loading-spinner .path {
+  stroke: var(--my-p-bg) !important;
+}
+
+.tk-action svg {
+  fill: var(--my-p-bg) !important;
+}
+
+.tk-action .tk-action-count {
+  color: var(--my-p-bg) !important;
+}
