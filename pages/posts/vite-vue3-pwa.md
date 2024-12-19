@@ -79,4 +79,6 @@ npx pwa-asset-generator ./public/iocn.svg  ./public/icons
 :::
 
 ## 参考
+::: tip client.d.ts
 你可以在[client.d.ts](https://github.com/vite-pwa/vite-plugin-pwa/blob/main/src/types.ts) 文件中找到 vite-plugin-pwa 插件的所有配置选项。
+:::
