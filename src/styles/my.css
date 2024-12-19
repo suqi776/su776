@@ -65,6 +65,7 @@
   color: var(--my-p-bg) !important;
 }
 .tk-tag .tk-tag-green {
-  background-color: var(--my-p-bg) !important;
+  color: var(--my-p-bg) !important;
+  background-color: var(--my-p-bg-1) !important;
   border-color: var(--my-p-bg) !important;
 }
