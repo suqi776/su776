@@ -64,7 +64,7 @@
 .tk-action .tk-action-count {
   color: var(--my-p-bg) !important;
 }
-.tk-tag .tk-tag-green {
+.tk-tag-green {
   color: var(--my-p-bg) !important;
   background-color: var(--my-p-bg-1) !important;
   border-color: var(--my-p-bg) !important;
