@@ -17,6 +17,7 @@ Vite6.0 发布了，想着用来练一下手，将自己的博客重写了。
 ### Vite
 - [Vite](https://vitejs.dev/): 用作构建工具，提供了快速的开发体验和优化的生产构建。
 - [vite-ssg](https://github.com/antfu-collective/vite-ssg): 用于生成静态站点生成（SSG）支持。
+- [vite-pwa](https://vite-pwa-org.netlify.app/): 用于生成 PWA 应用。
 
 ### Vue 3
 - [Vue](https://vuejs.org/): 使用 Vue 3 构建前端应用。
