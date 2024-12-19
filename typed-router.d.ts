@@ -24,8 +24,8 @@ declare module 'vue-router/auto-routes' {
     '/category/[category]': RouteRecordInfo<'/category/[category]', '/category/:category', { category: ParamValue<true> }, { category: ParamValue<false> }>,
     '/posts/': RouteRecordInfo<'/posts/', '/posts', Record<never, never>, Record<never, never>>,
     '/posts/blog-restart': RouteRecordInfo<'/posts/blog-restart', '/posts/blog-restart', Record<never, never>, Record<never, never>>,
-    '/posts/blog-restart-1': RouteRecordInfo<'/posts/blog-restart-1', '/posts/blog-restart-1', Record<never, never>, Record<never, never>>,
-    '/posts/blog-restart-2': RouteRecordInfo<'/posts/blog-restart-2', '/posts/blog-restart-2', Record<never, never>, Record<never, never>>,
+    '/posts/md': RouteRecordInfo<'/posts/md', '/posts/md', Record<never, never>, Record<never, never>>,
+    '/posts/vite-vue3-pwa': RouteRecordInfo<'/posts/vite-vue3-pwa', '/posts/vite-vue3-pwa', Record<never, never>, Record<never, never>>,
     '/tags/': RouteRecordInfo<'/tags/', '/tags', Record<never, never>, Record<never, never>>,
     '/tags/[tag]': RouteRecordInfo<'/tags/[tag]', '/tags/:tag', { tag: ParamValue<true> }, { tag: ParamValue<false> }>,
   }

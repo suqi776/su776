@@ -73,10 +73,10 @@ function blogListImagesSize() {
             :class="{ 'order-2': index % 2 === 0, 'order-1 items-end': index % 2 !== 0 }"
             class="h-150px w-100% flex flex-col justify-center rounded-lg p-1 px-8 py-10 text-lg font-medium xl:h-280px xl:w-58%"
           >
-            <h2 class="mb-6 text-3xl font-semibold card-hover-text">
+            <h2 class="text-3xl font-semibold card-hover-text">
               {{ post.title }}
             </h2>
-            <p class="text-sm text-gray-500 dark:text-gray-400">
+            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
               发表于{{ post.date }}
             </p>
             <div v-if="post.tags" class="flex items-center justify-between">

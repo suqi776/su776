@@ -24,6 +24,7 @@ import { slugify } from './scripts/slugify'
 
 import { lineNumberPlugin } from './src/composables/markdown/lineNumbers'
 import { preWrapperPlugin } from './src/composables/markdown/preWrapper'
+import { containerPlugin } from './src/composables/markdown/containers'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -159,6 +160,8 @@ export default defineConfig({
         md.use(preWrapperPlugin, { codeCopyButtonTitle: '复制代码' })
         // 添加行号
         md.use(lineNumberPlugin, { enable: true })
+        // 自定义容器
+        md.use(containerPlugin)
       },
     }),
     // should be placed after `Markdown()`

@@ -68,6 +68,7 @@ useHead({
         <slot />
       </article>
 
+      <div class="mb-6 h-2px"></div>
       <Twikoo v-if="!frontmatter.layout" />
     </div>
 
