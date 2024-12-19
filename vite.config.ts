@@ -19,6 +19,7 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 
 import { defineConfig } from 'vite'
+import { VitePWA } from 'vite-plugin-pwa'
 import { slugify } from './scripts/slugify'
 
 import { lineNumberPlugin } from './src/composables/markdown/lineNumbers'
@@ -32,6 +33,36 @@ export default defineConfig({
     },
   },
   plugins: [
+    // https://github.com/antfu/vite-plugin-pwa
+    VitePWA({
+      registerType: 'autoUpdate', // 自动更新
+      devOptions: {
+        enabled: true, // 启用开发模式的 PWA
+      },
+      manifest: {
+        name: 'SuBlog',
+        short_name: 'Sublog',
+        description: 'Su77\'s Blog',
+        theme_color: '#ffffff',
+        icons: [
+          {
+            src: 'icons/icon-180x180.svg',
+            sizes: '180x180',
+            type: 'image/png',
+          },
+          {
+            src: 'icons/icon-192x192.svg',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: 'icons/icon-512x512.svg',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
+      },
+    }),
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       imports: [
