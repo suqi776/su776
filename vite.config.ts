@@ -36,6 +36,9 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-pwa
     VitePWA({
       registerType: 'autoUpdate', // 自动更新
+      workbox: {
+        maximumFileSizeToCacheInBytes: 15 * 1024 * 1024, // 增加到 15 MB
+      },
       devOptions: {
         enabled: true, // 启用开发模式的 PWA
       },
