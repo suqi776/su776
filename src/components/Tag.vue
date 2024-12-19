@@ -1,8 +1,8 @@
 <script setup lang='ts'>
+import dayjs from 'dayjs'
 import { computed, ref, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
 import usePostsData from '../composables/posts.data'
-import dayjs from 'dayjs'
 
 // 获取所有文章数据
 const posts = usePostsData()
@@ -118,7 +118,7 @@ function blogListImagesSize() {
                 <div class="i-carbon-calendar-heat-map mr-2" />
                 <div>{{ dayjs(item.date).format('YYYY-MM-DD') }}</div>
               </div>
-              <h3 class="transform text-sm xl:text-xl font-semibold transition-all duration-500">
+              <h3 class="transform text-sm font-semibold transition-all duration-500 xl:text-xl">
                 {{ item.title }}
               </h3>
             </div>
@@ -132,7 +132,7 @@ function blogListImagesSize() {
       <!-- 上一页按钮 -->
       <button
         v-if="currentPage !== 1"
-        class="aside-item h-10 w-10 flex items-center justify-center rounded-lg transition"
+        class="h-10 w-10 flex items-center justify-center rounded-lg transition aside-item"
         @click="changePage(currentPage - 1)"
       >
         «
@@ -155,7 +155,7 @@ function blogListImagesSize() {
       <!-- 下一页按钮 -->
       <button
         v-if="currentPage !== totalPages"
-        class="aside-item h-10 w-10 flex items-center justify-center rounded-lg transition"
+        class="h-10 w-10 flex items-center justify-center rounded-lg transition aside-item"
         @click="changePage(currentPage + 1)"
       >
         »

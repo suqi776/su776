@@ -41,7 +41,7 @@ onUnmounted(() => {
   document.removeEventListener('click', handleClickOutside)
 })
 
-const isMobileMenuOpen = ref(false)  // 控制手机端菜单展开和收起
+const isMobileMenuOpen = ref(false) // 控制手机端菜单展开和收起
 
 // 切换手机端菜单状态
 function toggleMobileMenu() {
@@ -50,7 +50,7 @@ function toggleMobileMenu() {
 </script>
 
 <template>
-  <nav :class="{ 'border-b': !isTop }" class="fixed top-0 z-999 h-64px w-full border-gray-200 aside dark:border-gray-700 xl:p-x-0 p-x-2 xl:bg-[var(--c-bg)]">
+  <nav :class="{ 'border-b': !isTop }" class="fixed top-0 z-999 h-64px w-full border-gray-200 p-x-2 dark:border-gray-700 aside xl:bg-[var(--c-bg)] xl:p-x-0">
     <div class="mx-auto max-w-1300px flex items-center justify-between">
       <!-- Logo or Brand -->
       <div>
@@ -60,7 +60,7 @@ function toggleMobileMenu() {
       </div>
 
       <!-- Navigation Links -->
-      <ul class="hidden items-center space-x-6 xl:flex">
+      <ul class="hidden items-center xl:flex space-x-6">
         <li>
           <RouterLink to="/posts" class="transition duration-300 card-hover-text">
             文章
@@ -99,19 +99,27 @@ function toggleMobileMenu() {
     </div>
 
     <!-- Mobile Menu (Shows when isMobileMenuOpen is true) -->
-    <div v-if="isMobileMenuOpen" class="xl:hidden absolute right-0 w-full h-[calc(100vh-64px)] flex justify-center z-999 p-4 aside">
+    <div v-if="isMobileMenuOpen" class="absolute right-0 z-999 h-[calc(100vh-64px)] w-full flex justify-center p-4 xl:hidden aside">
       <ul class="w-full flex flex-col items-center">
         <li>
-          <RouterLink to="/posts" class="block p-2">文章</RouterLink>
+          <RouterLink to="/posts" class="block p-2">
+            文章
+          </RouterLink>
         </li>
         <li>
-          <RouterLink to="/category" class="block p-2">分类</RouterLink>
+          <RouterLink to="/category" class="block p-2">
+            分类
+          </RouterLink>
         </li>
         <li>
-          <RouterLink to="/tags" class="block p-2">标签</RouterLink>
+          <RouterLink to="/tags" class="block p-2">
+            标签
+          </RouterLink>
         </li>
         <li>
-          <RouterLink to="/about" class="block p-2">关于</RouterLink>
+          <RouterLink to="/about" class="block p-2">
+            关于
+          </RouterLink>
         </li>
         <li class="flex items-center justify-center">
           <button icon-btn card-hover-text @click="toggleDark()">

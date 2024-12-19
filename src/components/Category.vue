@@ -1,8 +1,8 @@
 <script setup lang='ts'>
+import dayjs from 'dayjs'
 import { computed, ref, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
 import usePostsData from '../composables/posts.data'
-import dayjs from 'dayjs'
 
 // 获取所有文章数据
 const posts = usePostsData()

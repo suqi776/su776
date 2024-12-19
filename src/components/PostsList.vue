@@ -54,13 +54,12 @@ function blogListImagesSize() {
       <li v-for="(post, index) in paginatedRoutes" :key="post.path">
         <RouterLink
           :to="post.path"
-          class="group mb-2 contents xl:flex justify-between rounded-lg aside"
+          class="group mb-2 contents justify-between rounded-lg xl:flex aside"
         >
           <!-- 图片 -->
           <div
             :class="{ 'order-1 rounded-bl-lg rounded-tl-lg': index % 2 === 0, 'order-2 rounded-br-lg rounded-tr-lg': index % 2 !== 0 }"
-            class="w-100% xl:w-42% overflow-hidden"
-            
+            class="w-100% overflow-hidden xl:w-42%"
           >
             <div
               :style="blogListImagesSize()"
@@ -72,7 +71,7 @@ function blogListImagesSize() {
           <!-- 文章内容 -->
           <div
             :class="{ 'order-2': index % 2 === 0, 'order-1 items-end': index % 2 !== 0 }"
-            class="h-150px w-100% xl:h-280px xl:w-58% flex flex-col justify-center rounded-lg p-1 px-8 py-10 text-lg font-medium"
+            class="h-150px w-100% flex flex-col justify-center rounded-lg p-1 px-8 py-10 text-lg font-medium xl:h-280px xl:w-58%"
           >
             <h2 class="mb-6 text-3xl font-semibold card-hover-text">
               {{ post.title }}
@@ -81,12 +80,12 @@ function blogListImagesSize() {
               发表于{{ post.date }}
             </p>
             <div v-if="post.tags" class="flex items-center justify-between">
-              <div class="text-sm text-gray-500 dark:text-gray-400 flex items-center">
+              <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
                 <div class="i-carbon-tag mr-1" /> {{ post?.tags && post.tags.join(', ') }}
               </div>
             </div>
             <div v-if="post.category" class="flex items-center justify-between">
-              <div class="text-sm text-gray-500 dark:text-gray-400 flex items-center">
+              <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
                 <div class="i-carbon-category mr-1" />{{ post?.category && post.category.join(', ') }}
               </div>
             </div>

@@ -60,7 +60,7 @@ const itemCounts = items.map((item) => {
         :key="item"
         :to="`${routePrefix}/${item}`"
         :style="`color: ${getItemColor(item)};`"
-        class="p-0.4em text-xl xl:text-4xl font-bold transition-transform duration-200 ease-in-out hover:scale-110 card-hover-text!"
+        class="p-0.4em text-xl font-bold transition-transform duration-200 ease-in-out hover:scale-110 xl:text-4xl card-hover-text!"
       >
         {{ item }}
         <span class="absolute text-sm xl:text-xl">

@@ -1,6 +1,6 @@
 <script setup lang='ts'>
-import usePostsData from '../composables/posts.data'
 import dayjs from 'dayjs'
+import usePostsData from '../composables/posts.data'
 
 // 获取所有文章数据
 const posts = usePostsData()
@@ -113,7 +113,7 @@ function blogListImagesSize() {
       <!-- 上一页按钮 -->
       <button
         v-if="currentPage !== 1"
-        class="aside-item h-10 w-10 flex items-center justify-center rounded-lg transition"
+        class="h-10 w-10 flex items-center justify-center rounded-lg transition aside-item"
         @click="changePage(currentPage - 1)"
       >
         «
@@ -136,7 +136,7 @@ function blogListImagesSize() {
       <!-- 下一页按钮 -->
       <button
         v-if="currentPage !== totalPages"
-        class="aside-item h-10 w-10 flex items-center justify-center rounded-lg transition"
+        class="h-10 w-10 flex items-center justify-center rounded-lg transition aside-item"
         @click="changePage(currentPage + 1)"
       >
         »
