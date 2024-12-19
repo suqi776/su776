@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { useRoute } from 'vue-router'
+
+const route = useRoute() // 使用 useRoute 获取路由信息
+
 const isTop = ref(true) // 用于判断当前是否在顶部
 
 function handleScroll() {
@@ -47,6 +51,11 @@ const isMobileMenuOpen = ref(false) // 控制手机端菜单展开和收起
 function toggleMobileMenu() {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
 }
+
+// 手机端监听路由
+watch(() => route.path, () => {
+  isMobileMenuOpen.value = false
+})
 </script>
 
 <template>
