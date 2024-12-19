@@ -37,7 +37,7 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate', // 自动更新
       workbox: {
-        maximumFileSizeToCacheInBytes: 15 * 1024 * 1024, // 增加到 15 MB
+        maximumFileSizeToCacheInBytes: 17 * 1024 * 1024, // 增加到 15 MB
       },
       devOptions: {
         enabled: true, // 启用开发模式的 PWA
@@ -49,19 +49,28 @@ export default defineConfig({
         theme_color: '#ffffff',
         icons: [
           {
-            src: 'icons/icon-180x180.svg',
-            sizes: '180x180',
-            type: 'image/png',
-          },
-          {
-            src: 'icons/icon-192x192.svg',
+            src: 'public/icons/manifest-icon-192.maskable.png',
             sizes: '192x192',
             type: 'image/png',
+            purpose: 'any',
           },
           {
-            src: 'icons/icon-512x512.svg',
+            src: 'public/icons/manifest-icon-192.maskable.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'maskable',
+          },
+          {
+            src: 'public/icons/manifest-icon-512.maskable.png',
             sizes: '512x512',
             type: 'image/png',
+            purpose: 'any',
+          },
+          {
+            src: 'public/icons/manifest-icon-512.maskable.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable',
           },
         ],
       },
