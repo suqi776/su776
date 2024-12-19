@@ -1,5 +1,6 @@
 <script setup lang='ts'>
 import usePostsData from '../composables/posts.data'
+import dayjs from 'dayjs'
 
 // 获取所有文章数据
 const posts = usePostsData()
@@ -96,7 +97,7 @@ function blogListImagesSize() {
             <div class="ml-4 card-hover-text">
               <div class="mb-1 flex items-center text-sm text-gray-400">
                 <div class="i-carbon-calendar-heat-map mr-2" />
-                {{ item.date }}
+                {{ dayjs(item.date).format('YYYY-MM-DD') }}
               </div>
               <h3 class="transform text-xl font-semibold transition-all duration-500">
                 {{ item.title }}

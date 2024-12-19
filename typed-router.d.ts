@@ -22,6 +22,7 @@ declare module 'vue-router/auto-routes' {
     '/about': RouteRecordInfo<'/about', '/about', Record<never, never>, Record<never, never>>,
     '/category/': RouteRecordInfo<'/category/', '/category', Record<never, never>, Record<never, never>>,
     '/category/[category]': RouteRecordInfo<'/category/[category]', '/category/:category', { category: ParamValue<true> }, { category: ParamValue<false> }>,
+    '/posts/': RouteRecordInfo<'/posts/', '/posts', Record<never, never>, Record<never, never>>,
     '/posts/blog-restart': RouteRecordInfo<'/posts/blog-restart', '/posts/blog-restart', Record<never, never>, Record<never, never>>,
     '/posts/blog-restart-1': RouteRecordInfo<'/posts/blog-restart-1', '/posts/blog-restart-1', Record<never, never>, Record<never, never>>,
     '/posts/blog-restart-2': RouteRecordInfo<'/posts/blog-restart-2', '/posts/blog-restart-2', Record<never, never>, Record<never, never>>,

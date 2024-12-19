@@ -54,12 +54,13 @@ function blogListImagesSize() {
       <li v-for="(post, index) in paginatedRoutes" :key="post.path">
         <RouterLink
           :to="post.path"
-          class="group mb-2 flex justify-between rounded-lg aside"
+          class="group mb-2 contents xl:flex justify-between rounded-lg aside"
         >
           <!-- 图片 -->
           <div
             :class="{ 'order-1 rounded-bl-lg rounded-tl-lg': index % 2 === 0, 'order-2 rounded-br-lg rounded-tr-lg': index % 2 !== 0 }"
-            class="w-[42%] overflow-hidden"
+            class="w-100% xl:w-42% overflow-hidden"
+            
           >
             <div
               :style="blogListImagesSize()"
@@ -71,11 +72,14 @@ function blogListImagesSize() {
           <!-- 文章内容 -->
           <div
             :class="{ 'order-2': index % 2 === 0, 'order-1 items-end': index % 2 !== 0 }"
-            class="h-280px w-58% flex flex-col justify-center rounded-lg p-1 px-8 py-10 text-lg font-medium"
+            class="h-150px w-100% xl:h-280px xl:w-58% flex flex-col justify-center rounded-lg p-1 px-8 py-10 text-lg font-medium"
           >
             <h2 class="mb-6 text-3xl font-semibold card-hover-text">
               {{ post.title }}
             </h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              发表于{{ post.date }}
+            </p>
             <div v-if="post.tags" class="flex items-center justify-between">
               <div class="text-sm text-gray-500 dark:text-gray-400 flex items-center">
                 <div class="i-carbon-tag mr-1" /> {{ post?.tags && post.tags.join(', ') }}
@@ -86,15 +90,12 @@ function blogListImagesSize() {
                 <div class="i-carbon-category mr-1" />{{ post?.category && post.category.join(', ') }}
               </div>
             </div>
-            <p class="text-sm text-gray-500 dark:text-gray-400">
-              发表于{{ post.date }}
-            </p>
           </div>
         </RouterLink>
       </li>
     </ul>
 
-    <div class="flex items-center justify-center gap-2">
+    <div v-if="totalPages > 1" class="flex items-center justify-center gap-2">
       <!-- 上一页按钮 -->
       <button
         v-if="currentPage !== 1"
