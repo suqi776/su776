@@ -44,7 +44,7 @@ Vite6.0 发布了，想着用来练一下手，将自己的博客重写了。
 - [ESLint](https://eslint.org/): 用于 JavaScript 和 Vue 代码的静态分析,确保代码质量。
 - [typescript](https://www.typescriptlang.org/): 用于支持 TypeScript 开发。
 - [autoprefixer](https://github.com/postcss/autoprefixer): 用于自动为 CSS 添加浏览器前缀。
-- [eslint-config](https://github.com/antfu/eslint-config): 使用大佬antfh的配置, ESLint 规则。
+- [eslint-config](https://github.com/antfu/eslint-config): 使用大佬Anthony Fu的配置, ESLint 规则。
 
 ### 其他工具
 - [nprogress](https://github.com/rstacruz/nprogress): 页面加载进度条。
