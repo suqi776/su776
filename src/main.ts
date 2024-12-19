@@ -1,3 +1,4 @@
+// @ts-expect-error missing types
 import NProgress from 'nprogress'
 import { ViteSSG } from 'vite-ssg'
 import { routes } from 'vue-router/auto-routes'
@@ -33,7 +34,7 @@ export const createApp = ViteSSG(
       }
     },
   },
-  ({ router, _app, isClient }) => {
+  ({ router, isClient }) => {
     if (isClient) {
       router.beforeEach(() => {
         NProgress.start()
