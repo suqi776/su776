@@ -95,9 +95,9 @@ watch(() => route.path, () => {
             <div i-carbon-sun dark:i-carbon-moon font-size-2xl />
           </button>
         </li>
-        <li class="flex items-center">
+        <li class="flex items-center relative">
           <div class="i-carbon-paint-brush cursor-pointer font-size-2xl card-hover-text" @click="toggleShow()" />
-          <UseTheme v-if="isShow" class="use-theme pos-absolute right-10 top-64px" />
+          <UseTheme v-if="isShow" class="use-theme pos-absolute right-0 top-64px" />
         </li>
       </ul>
 
