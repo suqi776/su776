@@ -1,4 +1,4 @@
-import path from 'node:path'
+import { resolve } from 'node:path'
 import MarkdownItShiki from '@shikijs/markdown-it'
 import { rendererRich, transformerTwoslash } from '@shikijs/twoslash'
 import { unheadVueComposablesImports } from '@unhead/vue'
@@ -31,9 +31,9 @@ import { preWrapperPlugin } from './src/composables/markdown/preWrapper'
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
-    alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
-    },
+    alias: [
+      { find: '~/', replacement: `${resolve(__dirname, 'src')}/` },
+    ],
   },
   plugins: [
     {

@@ -1,7 +1,32 @@
+import path from 'node:path'
 import fs from 'fs-extra'
-import shorts from './shorts.json'
+import shorts from '../../data/shorts.json'
 
 export function generateMarkdown() {
+  const shortsDir = './pages/shorts'
+
+  // 先清除除了 index.md 外的所有文件
+  fs.readdir(shortsDir)
+    .then((files) => {
+      files.forEach((file) => {
+        // 保留 index.md，删除其他文件
+        if (file !== 'index.md') {
+          const filePath = path.join(shortsDir, file)
+          fs.remove(filePath)
+            .then(() => {
+              // eslint-disable-next-line no-console
+              console.log(`✅ Deleted old file: ${filePath}`)
+            })
+            .catch((err) => {
+              console.error(`❌ Error deleting file ${filePath}:`, err)
+            })
+        }
+      })
+    })
+    .catch((err) => {
+      console.error('❌ Error reading directory:', err)
+    })
+
   shorts.forEach((item, index) => {
     const { title, date, imgURl } = item
 
