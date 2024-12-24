@@ -38,6 +38,7 @@ export default defineConfig({
   plugins: [
     {
       name: 'generate-markdown',
+      apply: 'serve',
       configureServer() {
         // Generate Markdown file on server start
         generateMarkdown()

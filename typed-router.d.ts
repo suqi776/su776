@@ -27,8 +27,6 @@ declare module 'vue-router/auto-routes' {
     '/posts/md': RouteRecordInfo<'/posts/md', '/posts/md', Record<never, never>, Record<never, never>>,
     '/posts/vite-vue3-pwa': RouteRecordInfo<'/posts/vite-vue3-pwa', '/posts/vite-vue3-pwa', Record<never, never>, Record<never, never>>,
     '/shorts/': RouteRecordInfo<'/shorts/', '/shorts', Record<never, never>, Record<never, never>>,
-    '/shorts/example_1': RouteRecordInfo<'/shorts/example_1', '/shorts/example_1', Record<never, never>, Record<never, never>>,
-    '/shorts/example_2': RouteRecordInfo<'/shorts/example_2', '/shorts/example_2', Record<never, never>, Record<never, never>>,
     '/shorts/shorts1': RouteRecordInfo<'/shorts/shorts1', '/shorts/shorts1', Record<never, never>, Record<never, never>>,
     '/shorts/shorts2': RouteRecordInfo<'/shorts/shorts2', '/shorts/shorts2', Record<never, never>, Record<never, never>>,
     '/tags/': RouteRecordInfo<'/tags/', '/tags', Record<never, never>, Record<never, never>>,
