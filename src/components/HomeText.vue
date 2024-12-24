@@ -3,10 +3,19 @@ import CompleteDict from '@pinyin-pro/data/complete'
 import { addDict, pinyin } from 'pinyin-pro'
 import { onMounted, onUnmounted, ref } from 'vue'
 
+const props = defineProps({
+  text: {
+    type: String, // 输入的文本
+    default: '你好 世界',
+  },
+})
+
 // 添加拼音词典
 addDict(CompleteDict)
 
-const text = ref('归去，也无风雨也无晴')
+const formattedText = props.text
+
+// 开始动画效果
 const animatedLetters = ref<{ letter: string, isVisible: boolean }[]>([]) // 用于存储带有可见状态的字符
 const charColors = ref<string[]>([]) // 用于存储字符颜色
 
@@ -15,13 +24,6 @@ let fullCycleTimeoutId: NodeJS.Timeout | null = null
 const enablePinyin = ref(true) // 是否启用拼音
 const delayBetweenCycles = 2000 // 每一轮动画完成后等待的时间
 
-// 插入换行符（仅在标点符号后插入）
-function formatTextWithLineBreaks(text: string): string {
-  return text.replace(/([。！？,；，、])/g, '$1\n')
-}
-
-const formattedText = ref(formatTextWithLineBreaks(text.value))
-
 // 开始拼音动画效果
 function startEffect() {
   if (intervalId)
@@ -29,9 +31,9 @@ function startEffect() {
   if (fullCycleTimeoutId)
     clearTimeout(fullCycleTimeoutId)
 
-  const chineseChars = formattedText.value.split('')
+  const chineseChars = formattedText.split('')
   const pinyinArray = enablePinyin.value
-    ? pinyin(formattedText.value, { toneType: 'none', type: 'array' })
+    ? pinyin(formattedText, { toneType: 'none', type: 'array' })
     : chineseChars
 
   animatedLetters.value = []

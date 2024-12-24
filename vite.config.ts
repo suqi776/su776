@@ -23,7 +23,9 @@ import { VitePWA } from 'vite-plugin-pwa'
 import { slugify } from './scripts/slugify'
 
 import { containerPlugin } from './src/composables/markdown/containers'
+import { generateMarkdown } from './src/composables/markdown/generateMarkdown'
 import { lineNumberPlugin } from './src/composables/markdown/lineNumbers'
+
 import { preWrapperPlugin } from './src/composables/markdown/preWrapper'
 
 // https://vitejs.dev/config/
@@ -34,6 +36,13 @@ export default defineConfig({
     },
   },
   plugins: [
+    {
+      name: 'generate-markdown',
+      configureServer() {
+        // Generate Markdown file on server start
+        generateMarkdown()
+      },
+    },
     // https://github.com/antfu/vite-plugin-pwa
     VitePWA({
       registerType: 'autoUpdate', // 自动更新
