@@ -15,7 +15,7 @@ const shorts = useShortsData()
         <!-- 图片容器 -->
         <div class="relative overflow-hidden rounded-t-lg">
           <img
-            :src="short.imgURl"
+            :src="short.imgURL"
             :alt="short.title"
             class="my-transition h-40 w-full rounded-t-lg object-cover group-hover:scale-120"
           >

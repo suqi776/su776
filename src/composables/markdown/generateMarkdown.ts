@@ -26,17 +26,17 @@ export function generateMarkdown() {
   })
 
   shorts.forEach((item, index) => {
-    const { title, date, imgURl } = item
+    const { title, date, imgURL } = item
 
     // 创建 Markdown 内容
     const markdownContent = `---
   title: ${title}
   date: ${date}
   type: shorts
-  imgURl: ${imgURl}
+  imgURL: ${imgURL}
 ---
 
-![${title}](${imgURl})
+![${title}](${imgURL})
 
 ${title}
 `

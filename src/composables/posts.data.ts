@@ -20,7 +20,7 @@ function useRoutesData(prefix: string): Post[] {
         layout: frontmatter.layout || '',
         category: frontmatter.category || [],
         type: frontmatter.type || 'post',
-        imgURl: frontmatter.imgURl || '',
+        imgURL: frontmatter.imgURL || '',
       }
     })
 

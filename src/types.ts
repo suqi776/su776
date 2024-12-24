@@ -7,5 +7,5 @@ export interface Post {
   layout?: string
   category?: string[]
   type?: string
-  imgURl?: string
+  imgURL?: string
 }

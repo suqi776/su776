@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-
 import { usePostsData } from '../composables/posts.data'
 
 const posts = usePostsData()
@@ -30,17 +29,7 @@ function goToPage(page: number) {
 
 function randomImages() {
   const imgNum = Math.floor(Math.random() * 5) + 1
-  return `url(/blog0${imgNum}.jpg)`
-}
-
-function blogListImagesSize() {
-  return {
-    backgroundImage: randomImages(),
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    height: '280px',
-  }
+  return `/blog0${imgNum}.jpg`
 }
 </script>
 
@@ -59,13 +48,13 @@ function blogListImagesSize() {
           <!-- 图片 -->
           <div
             :class="{ 'order-1 rounded-bl-lg rounded-tl-lg': index % 2 === 0, 'order-2 rounded-br-lg rounded-tr-lg': index % 2 !== 0 }"
-            class="w-100% overflow-hidden xl:w-42%"
+            class="h-280px w-100% overflow-hidden xl:w-42%"
           >
-            <div
-              :style="blogListImagesSize()"
+            <img
+              :src="post.imgURL || randomImages()"
               :class="{ 'rounded-bl-lg rounded-tl-lg': index % 2 === 0, 'rounded-br-lg rounded-tr-lg': index % 2 !== 0 }"
-              class="my-transition group-hover:scale-110"
-            />
+              class="my-transition h-full w-full bg-center bg-no-repeat object-cover group-hover:scale-110"
+            >
           </div>
 
           <!-- 文章内容 -->
