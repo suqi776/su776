@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import usePostsData from '../../composables/posts.data'
+import { usePostsData } from '../../composables/posts.data'
 
 const posts = usePostsData()
 

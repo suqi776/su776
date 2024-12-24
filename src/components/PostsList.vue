@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
-import usePostsData from '../composables/posts.data'
+import { usePostsData } from '../composables/posts.data'
 
 const posts = usePostsData()
 

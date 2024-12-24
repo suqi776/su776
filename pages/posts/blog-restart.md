@@ -5,6 +5,7 @@ tags:
   - 随笔
 category:
   - 博客
+type: post
 ---
 
 [[toc]]

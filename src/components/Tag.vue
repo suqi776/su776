@@ -2,7 +2,7 @@
 import dayjs from 'dayjs'
 import { computed, ref, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
-import usePostsData from '../composables/posts.data'
+import { usePostsData } from '../composables/posts.data'
 
 // 获取所有文章数据
 const posts = usePostsData()

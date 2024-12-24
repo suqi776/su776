@@ -22,9 +22,9 @@ import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { slugify } from './scripts/slugify'
 
+import { containerPlugin } from './src/composables/markdown/containers'
 import { lineNumberPlugin } from './src/composables/markdown/lineNumbers'
 import { preWrapperPlugin } from './src/composables/markdown/preWrapper'
-import { containerPlugin } from './src/composables/markdown/containers'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -41,7 +41,7 @@ export default defineConfig({
         maximumFileSizeToCacheInBytes: 17 * 1024 * 1024, // 增加到 15 MB
       },
       devOptions: {
-        enabled: true, // 启用开发模式的 PWA
+        enabled: false, // 启用开发模式的 PWA
       },
       manifest: {
         name: 'SuBlog',

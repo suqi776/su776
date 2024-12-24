@@ -1,10 +1,11 @@
 ---
 title: 记录md自定义语法
-date: 2024-12-19 12:00:00 
+date: 2024-12-19 12:00:00
 tags:
   - markdown
 category:
   - markdown
+type: post
 ---
 
 ## GitHub 风格的提醒
@@ -82,4 +83,3 @@ This is a dangerous warning.
 ::: details
 This is a details block.
 :::
-

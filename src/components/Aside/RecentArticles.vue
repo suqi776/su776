@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import usePostsData from '../../composables/posts.data'
+import { usePostsData } from '../../composables/posts.data'
 
 // 获取所有文章数据
 const posts = usePostsData()

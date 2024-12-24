@@ -7,6 +7,7 @@ tags:
 category:
   - Vue
 date: 2024-12-19 14:00:00
+type: post
 ---
 [[toc]]
 在 Vite + Vue 3 项目中添加 PWA，使用 Vite PWA 插件。配置步骤如下：
@@ -20,9 +21,9 @@ pnpm i vite-plugin-pwa -D
 
 ## 配置 Vite
 ```ts
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import { VitePWA } from 'vite-plugin-pwa';
+import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite'
+import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
   plugins: [
@@ -52,7 +53,7 @@ export default defineConfig({
       }
     })
   ]
-});
+})
 ```
 
 ## 图标
@@ -71,7 +72,7 @@ pnpm run dev
 可以使用 `pwa-asset-generator` 插件自动生成图标。
 
 ```bash
-npx pwa-asset-generator ./public/iocn.svg  ./public/icons 
+npx pwa-asset-generator ./public/iocn.svg  ./public/icons
 ```
 
 ::: details 生成如下图标

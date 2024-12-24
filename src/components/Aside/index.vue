@@ -1,7 +1,3 @@
-<script setup lang='ts'>
-
-</script>
-
 <template>
   <div class="hidden xl:flex xl:flex-col">
     <Info />
@@ -13,7 +9,3 @@
     </div>
   </div>
 </template>
-
-<style scoped>
-
-</style>

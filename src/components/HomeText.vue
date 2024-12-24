@@ -7,7 +7,7 @@ import { onMounted, onUnmounted, ref } from 'vue'
 addDict(CompleteDict)
 
 const text = ref('归去，也无风雨也无晴')
-const animatedLetters = ref<{ letter: string, isVisible: boolean }[]>([])  // 用于存储带有可见状态的字符
+const animatedLetters = ref<{ letter: string, isVisible: boolean }[]>([]) // 用于存储带有可见状态的字符
 const charColors = ref<string[]>([]) // 用于存储字符颜色
 
 let intervalId: NodeJS.Timeout | null = null
@@ -24,8 +24,10 @@ const formattedText = ref(formatTextWithLineBreaks(text.value))
 
 // 开始拼音动画效果
 function startEffect() {
-  if (intervalId) clearInterval(intervalId)
-  if (fullCycleTimeoutId) clearTimeout(fullCycleTimeoutId)
+  if (intervalId)
+    clearInterval(intervalId)
+  if (fullCycleTimeoutId)
+    clearTimeout(fullCycleTimeoutId)
 
   const chineseChars = formattedText.value.split('')
   const pinyinArray = enablePinyin.value
@@ -48,7 +50,8 @@ function startEffect() {
           nextChar()
         })
       })
-    } else {
+    }
+    else {
       fullCycleTimeoutId = setTimeout(() => {
         deleteEffect(chineseChars, () => {
           startEffect() // 删除完成后重新开始动画
@@ -61,6 +64,7 @@ function startEffect() {
 }
 
 // 显示拼音动画
+// eslint-disable-next-line ts/no-unsafe-function-type
 function showPinyin(pinyin: string, index: number, callback: Function) {
   let letterIndex = 0
   animatedLetters.value[index] = { letter: '', isVisible: true }
@@ -77,6 +81,7 @@ function showPinyin(pinyin: string, index: number, callback: Function) {
 }
 
 // 替换为中文字符
+// eslint-disable-next-line ts/no-unsafe-function-type
 function replaceWithChinese(chinese: string, index: number, callback: Function) {
   setTimeout(() => {
     animatedLetters.value[index].letter = chinese
@@ -85,6 +90,7 @@ function replaceWithChinese(chinese: string, index: number, callback: Function) 
 }
 
 // 删除效果
+// eslint-disable-next-line ts/no-unsafe-function-type
 function deleteEffect(letters: string[], callback: Function) {
   let deleteIndex = letters.length - 1
 
@@ -92,7 +98,8 @@ function deleteEffect(letters: string[], callback: Function) {
     if (deleteIndex >= 0) {
       animatedLetters.value[deleteIndex].isVisible = false
       deleteIndex--
-    } else {
+    }
+    else {
       clearInterval(intervalId as NodeJS.Timeout)
       setTimeout(() => {
         animatedLetters.value = []
@@ -110,8 +117,10 @@ function getRandomColor(): string {
 
 // 页面卸载时清除定时器
 onUnmounted(() => {
-  if (intervalId) clearInterval(intervalId as NodeJS.Timeout)
-  if (fullCycleTimeoutId) clearTimeout(fullCycleTimeoutId as NodeJS.Timeout)
+  if (intervalId)
+    clearInterval(intervalId as NodeJS.Timeout)
+  if (fullCycleTimeoutId)
+    clearTimeout(fullCycleTimeoutId as NodeJS.Timeout)
 })
 
 // 页面加载时开始动画

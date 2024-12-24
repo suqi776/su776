@@ -6,4 +6,6 @@ export interface Post {
   tags?: string[]
   layout?: string
   category?: string[]
+  type?: string
+  imgURl?: string
 }

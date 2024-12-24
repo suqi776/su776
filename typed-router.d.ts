@@ -26,6 +26,9 @@ declare module 'vue-router/auto-routes' {
     '/posts/blog-restart': RouteRecordInfo<'/posts/blog-restart', '/posts/blog-restart', Record<never, never>, Record<never, never>>,
     '/posts/md': RouteRecordInfo<'/posts/md', '/posts/md', Record<never, never>, Record<never, never>>,
     '/posts/vite-vue3-pwa': RouteRecordInfo<'/posts/vite-vue3-pwa', '/posts/vite-vue3-pwa', Record<never, never>, Record<never, never>>,
+    '/shorts/': RouteRecordInfo<'/shorts/', '/shorts', Record<never, never>, Record<never, never>>,
+    '/shorts/s-1': RouteRecordInfo<'/shorts/s-1', '/shorts/s-1', Record<never, never>, Record<never, never>>,
+    '/shorts/s-2': RouteRecordInfo<'/shorts/s-2', '/shorts/s-2', Record<never, never>, Record<never, never>>,
     '/tags/': RouteRecordInfo<'/tags/', '/tags', Record<never, never>, Record<never, never>>,
     '/tags/[tag]': RouteRecordInfo<'/tags/[tag]', '/tags/:tag', { tag: ParamValue<true> }, { tag: ParamValue<false> }>,
   }

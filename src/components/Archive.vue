@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import dayjs from 'dayjs'
-import usePostsData from '../composables/posts.data'
+import { usePostsData } from '../composables/posts.data'
 
 // 获取所有文章数据
 const posts = usePostsData()

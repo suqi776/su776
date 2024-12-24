@@ -23,7 +23,7 @@ useHead({
 </script>
 
 <template>
-  <div v-if="!frontmatter.layout" class="mx-auto max-w-1300px flex p-1">
+  <div v-if="!frontmatter.layout && frontmatter.type === 'post'" class="mx-auto max-w-1300px flex p-1">
     <div class="h-350px w-full flex flex-col items-center justify-center rounded-lg">
       <!-- 如果存在标题则显示标题 -->
       <h1 class="slide-enter-50 mb-0 text-5xl font-bold">
@@ -68,7 +68,7 @@ useHead({
         <slot />
       </article>
 
-      <div v-if="!frontmatter.layout" class="mb-6 h-2px"></div>
+      <div v-if="!frontmatter.layout" class="mb-6 h-2px" />
       <Twikoo v-if="!frontmatter.layout" />
     </div>
 

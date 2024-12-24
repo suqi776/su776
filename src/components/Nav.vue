@@ -71,6 +71,11 @@ watch(() => route.path, () => {
       <!-- Navigation Links -->
       <ul class="hidden items-center xl:flex space-x-6">
         <li>
+          <RouterLink to="/shorts" class="transition duration-300 card-hover-text">
+            图文
+          </RouterLink>
+        </li>
+        <li>
           <RouterLink to="/posts" class="transition duration-300 card-hover-text">
             文章
           </RouterLink>
@@ -95,7 +100,7 @@ watch(() => route.path, () => {
             <div i-carbon-sun dark:i-carbon-moon font-size-2xl />
           </button>
         </li>
-        <li class="flex items-center relative">
+        <li class="relative flex items-center">
           <div class="i-carbon-paint-brush cursor-pointer font-size-2xl card-hover-text" @click="toggleShow()" />
           <UseTheme v-if="isShow" class="use-theme pos-absolute right-0 top-64px" />
         </li>
