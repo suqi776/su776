@@ -24,11 +24,12 @@ function highlightOnScroll() {
   calculateReadingProgress()
 
   const headings = Array.from(
-    document.querySelectorAll('h2, h3, h4, h5, h6'),
+    document.querySelectorAll('.prose > h1, .prose > h2, .prose > h3, .prose > h4, .prose > h5, .prose > h6'),
   ) as HTMLElement[]
 
   let lastVisibleHeading = ''
-  const bufferheight = 120 // 缓冲高度，避免滚动到顶部时高亮消失
+  const bufferheight = 150 // 缓冲高度，避免滚动到顶部时高亮消失
+
   for (const heading of headings) {
     const rect = heading.getBoundingClientRect()
     if (rect.top - bufferheight <= 0 && rect.bottom + bufferheight >= 0) {
@@ -63,8 +64,10 @@ onUnmounted(() => {
 watch(
   () => route.path,
   () => {
-    getContentsHtml()
-    highlightOnScroll()
+    setTimeout(() => {
+      getContentsHtml()
+      highlightOnScroll()
+    }, 0)
   },
 )
 </script>

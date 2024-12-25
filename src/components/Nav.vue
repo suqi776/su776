@@ -71,7 +71,7 @@ watch(() => route.path, () => {
       <!-- Navigation Links -->
       <ul class="hidden items-center xl:flex space-x-6">
         <li>
-          <RouterLink to="/shorts" class="transition duration-300 card-hover-text">
+          <RouterLink to="/short" class="transition duration-300 card-hover-text">
             图文
           </RouterLink>
         </li>

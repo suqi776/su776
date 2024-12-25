@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import { useShortsData } from '../composables/posts.data'
+import { useShortData } from '../composables/posts.data'
 
-const shorts = useShortsData()
+const short = useShortData()
 </script>
 
 <template>
   <div class="grid grid-cols-1 gap-4 p-4 lg:grid-cols-3 sm:grid-cols-2">
     <div
-      v-for="(short, index) in shorts"
+      v-for="(item, index) in short"
       :key="index"
       class="group rounded-lg aside-item hover:card-hover-text"
     >
-      <RouterLink :to="short.path" class="block">
+      <RouterLink :to="item.path" class="block">
         <!-- 图片容器 -->
         <div class="relative overflow-hidden rounded-t-lg">
           <img
-            :src="short.imgURL"
-            :alt="short.title"
+            :src="item.imgURL"
+            :alt="item.title"
             class="my-transition h-40 w-full rounded-t-lg object-cover group-hover:scale-120"
           >
         </div>
@@ -25,7 +25,7 @@ const shorts = useShortsData()
           <div
             class="block truncate text-center text-lg font-semibold"
           >
-            {{ short.title }}
+            {{ item.title }}
           </div>
         </div>
       </RouterLink>

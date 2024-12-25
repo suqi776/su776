@@ -35,6 +35,6 @@ export function usePostsData(): Post[] {
 }
 
 // 获取短内容数据
-export function useShortsData(): Post[] {
-  return useRoutesData('/shorts')
+export function useShortData(): Post[] {
+  return useRoutesData('/short')
 }

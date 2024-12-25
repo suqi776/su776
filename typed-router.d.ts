@@ -27,9 +27,9 @@ declare module 'vue-router/auto-routes' {
     '/posts/blog-restart': RouteRecordInfo<'/posts/blog-restart', '/posts/blog-restart', Record<never, never>, Record<never, never>>,
     '/posts/md': RouteRecordInfo<'/posts/md', '/posts/md', Record<never, never>, Record<never, never>>,
     '/posts/vite-vue3-pwa': RouteRecordInfo<'/posts/vite-vue3-pwa', '/posts/vite-vue3-pwa', Record<never, never>, Record<never, never>>,
-    '/shorts/': RouteRecordInfo<'/shorts/', '/shorts', Record<never, never>, Record<never, never>>,
-    '/shorts/shorts1': RouteRecordInfo<'/shorts/shorts1', '/shorts/shorts1', Record<never, never>, Record<never, never>>,
-    '/shorts/shorts2': RouteRecordInfo<'/shorts/shorts2', '/shorts/shorts2', Record<never, never>, Record<never, never>>,
+    '/short/': RouteRecordInfo<'/short/', '/short', Record<never, never>, Record<never, never>>,
+    '/short/short1': RouteRecordInfo<'/short/short1', '/short/short1', Record<never, never>, Record<never, never>>,
+    '/short/short2': RouteRecordInfo<'/short/short2', '/short/short2', Record<never, never>, Record<never, never>>,
     '/tags/': RouteRecordInfo<'/tags/', '/tags', Record<never, never>, Record<never, never>>,
     '/tags/[tag]': RouteRecordInfo<'/tags/[tag]', '/tags/:tag', { tag: ParamValue<true> }, { tag: ParamValue<false> }>,
   }

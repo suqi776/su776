@@ -245,7 +245,7 @@ declare global {
   const useServerSeoMeta: typeof import('@unhead/vue')['useServerSeoMeta']
   const useSessionStorage: typeof import('@vueuse/core')['useSessionStorage']
   const useShare: typeof import('@vueuse/core')['useShare']
-  const useShortsData: typeof import('./src/composables/posts.data')['useShortsData']
+  const useShortData: typeof import('./src/composables/posts.data')['useShortData']
   const useSlots: typeof import('vue')['useSlots']
   const useSorted: typeof import('@vueuse/core')['useSorted']
   const useSpeechRecognition: typeof import('@vueuse/core')['useSpeechRecognition']
@@ -556,7 +556,7 @@ declare module 'vue' {
     readonly useServerSeoMeta: UnwrapRef<typeof import('@unhead/vue')['useServerSeoMeta']>
     readonly useSessionStorage: UnwrapRef<typeof import('@vueuse/core')['useSessionStorage']>
     readonly useShare: UnwrapRef<typeof import('@vueuse/core')['useShare']>
-    readonly useShortsData: UnwrapRef<typeof import('./src/composables/posts.data')['useShortsData']>
+    readonly useShortData: UnwrapRef<typeof import('./src/composables/posts.data')['useShortData']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useSorted: UnwrapRef<typeof import('@vueuse/core')['useSorted']>
     readonly useSpeechRecognition: UnwrapRef<typeof import('@vueuse/core')['useSpeechRecognition']>

@@ -1,6 +1,6 @@
 ---
-layout: Shorts
+layout: Short
 ---
 
 <!-- @layout-full-width -->
-<ShortsList />
+<ShortList />

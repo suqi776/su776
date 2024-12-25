@@ -1,16 +1,16 @@
 import path from 'node:path'
 import fs from 'fs-extra'
-import shorts from '../../data/shorts.json'
+import short from '../../data/short.json'
 
 export function generateMarkdown() {
-  const shortsDir = './pages/shorts'
+  const shortDir = './pages/short'
 
   // 先清除除了 index.md 外的所有文件
-  fs.readdir(shortsDir).then((files) => {
+  fs.readdir(shortDir).then((files) => {
     files.forEach((file) => {
       // 保留 index.md，删除其他文件
       if (file !== 'index.md') {
-        const filePath = path.join(shortsDir, file)
+        const filePath = path.join(shortDir, file)
         fs.remove(filePath)
           .then(() => {
             // eslint-disable-next-line no-console
@@ -25,14 +25,14 @@ export function generateMarkdown() {
     console.error('❌ Error reading directory:', err)
   })
 
-  shorts.forEach((item, index) => {
+  short.forEach((item, index) => {
     const { title, date, imgURL } = item
 
     // 创建 Markdown 内容
     const markdownContent = `---
   title: ${title}
   date: ${date}
-  type: shorts
+  type: short
   imgURL: ${imgURL}
 ---
 
@@ -42,9 +42,9 @@ ${title}
 `
 
     // 确保 public 目录存在
-    const filePath = `./pages/shorts/shorts${index + 1}.md`
+    const filePath = `./pages/short/short${index + 1}.md`
 
-    fs.ensureDir('./pages/shorts').then(() => {
+    fs.ensureDir('./pages/short').then(() => {
       // 写入每个 Markdown 文件
       fs.writeFile(filePath, markdownContent, (err) => {
         if (err) {
