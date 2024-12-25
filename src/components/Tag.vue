@@ -87,7 +87,7 @@ function blogListImagesSize() {
   <div class="min-h-screen p-6">
     <!-- 页面标题 -->
     <h1 class="mb-4 text-4xl font-bold">
-      Tag - {{ route.params.tag }}
+      标签 - {{ route.params.tag }}
     </h1>
 
     <!-- 按年份分组文章列表 -->

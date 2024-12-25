@@ -91,6 +91,11 @@ watch(() => route.path, () => {
           </RouterLink>
         </li>
         <li>
+          <RouterLink to="/link" class="transition duration-300 card-hover-text">
+            友链
+          </RouterLink>
+        </li>
+        <li>
           <RouterLink to="/about" class="transition duration-300 card-hover-text">
             关于
           </RouterLink>

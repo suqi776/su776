@@ -14,6 +14,7 @@ declare module 'vue' {
     Header: typeof import('./src/components/Header.vue')['default']
     HomeText: typeof import('./src/components/HomeText.vue')['default']
     Info: typeof import('./src/components/Aside/Info.vue')['default']
+    LinkList: typeof import('./src/components/LinkList.vue')['default']
     Nav: typeof import('./src/components/Nav.vue')['default']
     Posts: typeof import('./src/components/Posts.vue')['default']
     PostsList: typeof import('./src/components/PostsList.vue')['default']

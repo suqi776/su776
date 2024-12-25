@@ -60,7 +60,7 @@ useHead({
       :class="{
         'aside': frontmatter.layout !== 'Home',
         'rounded-lg': frontmatter.layout !== 'Home',
-        'p-2.5em': frontmatter.layout !== 'Home',
+        'p-0.5 xl:p-2.5em': frontmatter.layout !== 'Home',
       }"
     >
       <!-- 文章内容引用 -->
