@@ -18,6 +18,7 @@ declare module 'vue' {
     Nav: typeof import('./src/components/Nav.vue')['default']
     Posts: typeof import('./src/components/Posts.vue')['default']
     PostsList: typeof import('./src/components/PostsList.vue')['default']
+    PostsType: typeof import('./src/components/PostsType.vue')['default']
     RecentArticles: typeof import('./src/components/Aside/RecentArticles.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

@@ -1,36 +1,31 @@
 <script setup lang='ts'>
+import type { Post } from '../types'
 import dayjs from 'dayjs'
-import { computed, ref, watchEffect } from 'vue'
-import { useRoute } from 'vue-router'
-import { usePostsData } from '../composables/posts.data'
 
-// 获取所有文章数据
-const posts = usePostsData()
-// 获取路由对象
-const route = useRoute() as { params: { category?: string } }
-
-const selectedCategory = ref<string>('')
-
-// 根据路由中的 category 参数来设置选中的标签
-watchEffect(() => {
-  const categoryFromRoute = route.params.category
-  selectedCategory.value = typeof categoryFromRoute === 'string' ? categoryFromRoute : ''
-})
-
-// 根据选中的标签过滤文章
-const filteredPosts = computed(() => {
-  if (!selectedCategory.value)
-    return posts
-  return posts.filter(post => post.category?.includes(selectedCategory.value))
+const { posts, type, title, pageSize } = defineProps({
+  posts: {
+    type: Array as () => Post[],
+    required: true,
+  },
+  type: {
+    type: String,
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+  pageSize: {
+    type: Number,
+    default: 5,
+  },
 })
 
 // 分页状态
 const currentPage = ref(1)
-const pageSize = 5
 
 // 获取按日期排序的文章
 const sortedPosts = computed(() => {
-  return filteredPosts.value
+  return posts
     .slice()
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 })
@@ -87,7 +82,7 @@ function blogListImagesSize() {
   <div class="min-h-screen p-6">
     <!-- 页面标题 -->
     <h1 class="mb-4 text-4xl font-bold">
-      分类 - {{ route.params.category }}
+      {{ title }} - {{ type }}
     </h1>
 
     <!-- 按年份分组文章列表 -->
@@ -104,7 +99,7 @@ function blogListImagesSize() {
           :key="index"
         >
           <RouterLink :to="item.path" class="flex items-center">
-            <div class="h-20 w-32 overflow-hidden border-2 rounded-lg">
+            <div class="h-20 min-w-32 overflow-hidden border-2 rounded-lg">
               <!-- 配图 -->
               <img
                 :style="blogListImagesSize()"
@@ -113,12 +108,12 @@ function blogListImagesSize() {
             </div>
 
             <!-- 内容 -->
-            <div class="ml-4 card-hover-text">
+            <div class="ml-4 truncate card-hover-text">
               <div class="mb-1 flex items-center text-sm text-gray-400">
                 <div class="i-carbon-calendar-heat-map mr-2" />
                 <div>{{ dayjs(item.date).format('YYYY-MM-DD') }}</div>
               </div>
-              <h3 class="transform text-xl font-semibold transition-all duration-500">
+              <h3 class="transform truncate text-xl font-semibold transition-all duration-500">
                 {{ item.title }}
               </h3>
             </div>
