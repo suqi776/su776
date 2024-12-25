@@ -10,14 +10,14 @@ layout: Link
 ```json
 {
   "name": "Su77",
-  "link": "https://suqi.me",
+  "link": "https://www.suqi.me",
   "avatar": "https://s2.loli.net/2024/12/25/rJqPLYzNykw2CBK.png",
   "description": "归去，也无风雨也无晴"
 }
 ```
 ```yaml
 name: Su77
-link: https://suqi.me
+link: https://www.suqi.me
 avatar: https://s2.loli.net/2024/12/25/rJqPLYzNykw2CBK.png
 description: 归去，也无风雨也无晴
 ```

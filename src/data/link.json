@@ -1,7 +1,7 @@
 [
   {
     "name": "Su77",
-    "link": "https://suqi.me",
+    "link": "https://www.suqi.me",
     "avatar": "https://s2.loli.net/2024/12/25/rJqPLYzNykw2CBK.png",
     "description": "归去，也无风雨也无晴"
   },
@@ -26,5 +26,11 @@
     "avatar": "https://bu.dusays.com/2024/10/25/671b2438203a6.gif",
     "description": "致以无暇之人",
     "keywords": "Elykia"
+  },
+  {
+    "name": "xyx404",
+    "link": "https://blog.xyx404.us.kg/",
+    "description": "在努力和摆烂中选择了努力摆烂AWA",
+    "avatar": "https://fastly.jsdelivr.net/npm/xyx404blogphoto@1.2.23/avatar.webp"
   }
 ]
