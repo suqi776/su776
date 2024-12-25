@@ -121,6 +121,11 @@ watch(() => route.path, () => {
     <div v-if="isMobileMenuOpen" class="absolute right-0 z-999 h-[calc(100vh-64px)] w-full flex justify-center p-4 xl:hidden aside">
       <ul class="w-full flex flex-col items-center">
         <li>
+          <RouterLink to="/short" class="block p-2">
+            图文
+          </RouterLink>
+        </li>
+        <li>
           <RouterLink to="/posts" class="block p-2">
             文章
           </RouterLink>
@@ -133,6 +138,11 @@ watch(() => route.path, () => {
         <li>
           <RouterLink to="/tags" class="block p-2">
             标签
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/link" class="block p-2">
+            友链
           </RouterLink>
         </li>
         <li>
