@@ -12,5 +12,12 @@
     "avatar": "https://blog.aizrf.com/img/logo.png",
     "description": "收录开源，好用的互联网项目",
     "keywords": "周润发"
+  },
+  {
+    "name": "MysticStars",
+    "link": "https://www.mysticstars.cn",
+    "avatar": "https://www.mysticstars.cn/upload/MysticStars.svg",
+    "description": "Discover Infinity"
   }
+
 ]
