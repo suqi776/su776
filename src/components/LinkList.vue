@@ -5,10 +5,10 @@ import link from '../data/link.json'
 <template>
   <div>
     <h2 class="mb-4">
-      <span class="text-3xl font-bold">友情链接</span>
-      <h2 class="text-sm text-gray-400">
+      <span class="block text-3xl font-bold">友情链接</span>
+      <span class="text-sm text-gray-400">
         随机排列
-      </h2>
+      </span>
     </h2>
     <ul class="grid grid-cols-1 mb-4 gap-4 md:grid-cols-4">
       <li
