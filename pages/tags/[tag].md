@@ -3,7 +3,7 @@ layout: tag
 ---
 
 <!-- @layout-full-width -->
-<script setup lang="ts">
+<script setup>
 import { computed, ref, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
 import { usePostsData } from '../../src/composables/posts.data'
@@ -12,9 +12,9 @@ import { usePostsData } from '../../src/composables/posts.data'
 const posts = usePostsData()
 
 // 获取路由对象
-const route = useRoute() as { params: { tag?: string } }
+const route = useRoute()
 
-const selectedTag = ref<string>('')
+const selectedTag = ref('')
 
 // 根据路由中的 tag 参数来设置选中的标签
 watchEffect(() => {
@@ -26,7 +26,7 @@ watchEffect(() => {
 const filteredPosts = computed(() => {
   if (!selectedTag.value)
     return posts
-  return posts.filter(post => post.tags?.includes(selectedTag.value))
+  return posts.filter(post => post.tags.includes(selectedTag.value))
 })
 </script>
 

@@ -2,8 +2,7 @@
 layout: category
 ---
 
-<!-- @layout-full-width -->
-<script setup lang="ts">
+<script setup>
 import { computed, ref, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
 import { usePostsData } from '../../src/composables/posts.data'
@@ -12,9 +11,9 @@ import { usePostsData } from '../../src/composables/posts.data'
 const posts = usePostsData()
 
 // 获取路由对象
-const route = useRoute() as { params: { category?: string } }
+const route = useRoute()
 
-const type = ref<string>('')
+const type = ref('')
 
 // 根据路由中的 tag 参数来设置选中的标签
 watchEffect(() => {
@@ -26,8 +25,9 @@ watchEffect(() => {
 const filteredPosts = computed(() => {
   if (!type.value)
     return posts
-  return posts.filter(post => post.category?.includes(type.value))
+  return posts.filter(post => post.category.includes(type.value))
 })
 </script>
 
+<!-- @layout-full-width -->
 <PostsType :posts="filteredPosts" title="分类" :type="type" />

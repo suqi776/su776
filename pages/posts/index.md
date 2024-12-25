@@ -3,7 +3,7 @@ layout: Posts
 ---
 
 <!-- @layout-full-width -->
-<script setup lang="ts">
+<script setup>
 import { computed, ref, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
 import { usePostsData } from '../../src/composables/posts.data'
