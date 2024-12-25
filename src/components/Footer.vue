@@ -36,31 +36,19 @@ onMounted(() => {
   <footer class="w-full py-8">
     <div class="mx-auto px-6 text-center container">
       <p class="text-sm">
-        <a class="card-hover-text" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> &copy; {{ new Date().getFullYear() }} Su77's Blog
+        <a class="card-hover-text" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+        &copy; {{ new Date().getFullYear() }}
+        Su77's Blog
       </p>
+      <span class="text-xs text-gray-400">本站已持续运行{{ stats.runningTime }}</span>
       <nav class="flex justify-center gap-4">
-        <!-- <a
-          href="https://github.com/sqsuqi/myvite"
+        <a
+          href="https://github.com/suqi776/su776"
           target="_blank"
           rel="noreferrer"
-          class="hover:text-gray-400"
-        >
-          GitHub
-        </a>
-        <a
-          href="/about"
-          class="hover:text-gray-400"
-        >
-          About
-        </a>
-        <a
-          href="/contact"
-          class="hover:text-gray-400"
-        >
-          Contact
-        </a> -->
+          class="i-mdi-github"
+        />
       </nav>
-      <span class="text-xs text-gray-400">本站已持续运行{{ stats.runningTime }}</span>
     </div>
   </footer>
 </template>
