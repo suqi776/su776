@@ -2,13 +2,27 @@
 import axios from 'axios'
 import { onMounted, ref } from 'vue'
 
-// 定义响应式变量
-const location = ref<string>('') // 用户位置
-const distance = ref<number>(0) // 距离
-const ip = ref<string>('') // 用户 IP
+// 定义接口数据
+interface Data {
+  ip: string // IP 地址
+  nation: string // 国家
+  province: string // 省份
+  city: string // 城市
+  district: string // 区
+  adcode: number // 行政区划代码
+  lat: number // 纬度
+  lng: number // 经度
+}
+
+const ipInfo = ref<Data>() // 用户 IP 信息
+
+const distance = ref<number>(0) // 用户距离目标地点的距离（单位：公里）
+
+const targetLat = 31.2304 // 上海纬度
+const targetLon = 121.4737 // 上海经度
 
 // Haversine 公式计算距离
-function calculateDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {
+function calculateDistance(lat1: number, lon1: number, lat2: number, lon2: number) {
   const R = 6371 // 地球半径（公里）
   const dLat = (lat2 - lat1) * Math.PI / 180
   const dLon = (lon2 - lon1) * Math.PI / 180
@@ -16,27 +30,25 @@ function calculateDistance(lat1: number, lon1: number, lat2: number, lon2: numbe
     + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180)
     * Math.sin(dLon / 2) * Math.sin(dLon / 2)
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
-  return Number.parseFloat((R * c).toFixed(1)) // 返回一位小数
+  distance.value = Number.parseFloat((R * c).toFixed(1)) // 返回一位小数
 }
 
 // 获取数据的函数
-async function fetchData() {
+function fetchData() {
   try {
-    // 第一步：获取用户 IP 地址
-    const ipResponse = await axios.get('https://apis.map.qq.com/ws/geocoder/v1?location=28.7033487,115.8660847&key=VIEBZ-FZTYZ-IEHXX-ZDAZ4-JVMD2-YMFOC')
-
-    console.log(ipResponse)
-    // ip.value = ipResponse.data.ip
-
-    // // 第二步：通过 IP 获取地理位置
-    // const locationResponse = await axios.get(`http://ip-api.com/json/${ip.value}?lang=zh-CN`)
-    // const data = locationResponse.data
-    // location.value = `${data.city}`
-
-    // // 第三步：计算距离（目标地点：广州坐标 23.1291, 113.2644）
-    // const targetLat = 23.1291
-    // const targetLon = 113.2644
-    // distance.value = calculateDistance(data.lat, data.lon, targetLat, targetLon)
+    axios.get('https://api.nsmao.net/api/ip/query', {
+      params: {
+        key: 'sTyrzimgoEIIOTNwNQ1fCyLtll',
+      },
+      timeout: 5000, // 超时时间
+    }).then((response) => {
+      ipInfo.value = response.data.data // 赋值响应式变量
+      if (ipInfo.value) {
+        calculateDistance(ipInfo.value?.lat, ipInfo.value?.lng, targetLat, targetLon)
+      }
+    }).catch((error) => {
+      console.error('请求失败', error) // 请求失败处理
+    })
   }
   catch (error) {
     console.error('获取数据出错：', error)
@@ -54,9 +66,8 @@ onMounted(() => {
     <h2 class="mb-2 text-2xl font-bold">
       问候
     </h2>
-    <p>欢迎来自 {{ location }} 的小伙伴🍂</p>
-    <p>众所周知，中国只有两个城市！</p>
+    <p>欢迎来自 <span class="cursor-pointer text-[var(--my-p-bg)] font-bold">{{ ipInfo?.province }}{{ ipInfo?.city }}</span> 的小伙伴！</p>
     <p>我们距离约有 {{ distance }} 公里！</p>
-    <p>您的IP地址为：{{ ip }}</p>
+    <p>您的IP地址为：{{ ipInfo?.ip }}</p>
   </div>
 </template>
