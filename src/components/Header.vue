@@ -12,7 +12,7 @@ const route = useRoute() // 使用 useRoute 获取路由信息
         Welcome to my blog
       </div>
       <div class="mt-4 text-lg">
-        <HomeText />
+        <HomeText text="归去，也无风雨也无晴" />
       </div>
     </div>
   </div>
