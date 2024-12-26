@@ -8,7 +8,7 @@ category:
 type: post
 imgURL: https://s2.loli.net/2024/10/29/M5d9BOwZSeHlcLF.jpg
 ---
-
+[[toc]]
 ## GitHub 风格的提醒
 ``` md
 > [!NOTE]
