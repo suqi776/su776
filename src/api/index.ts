@@ -12,3 +12,4 @@ export async function fetchHitokoto() {
   const hitokoto = await response.json()
   return hitokoto
 }
+

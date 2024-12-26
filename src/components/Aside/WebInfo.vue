@@ -50,9 +50,9 @@ function getLastUpdated(date: string) {
 
 <template>
   <div class="rounded-lg p-6 aside">
-    <h1 class="mb-3 text-3xl font-bold">
+    <h2 class="mb-2 text-2xl font-bold">
       网站信息
-    </h1>
+    </h2>
     <ul class="text-#555 space-y-3">
       <li class="flex justify-between">
         <span>文章数目:</span>

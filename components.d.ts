@@ -32,5 +32,6 @@ declare module 'vue' {
     Twikoo: typeof import('./src/components/Twikoo.vue')['default']
     UseTheme: typeof import('./src/components/useTheme.vue')['default']
     WebInfo: typeof import('./src/components/Aside/WebInfo.vue')['default']
+    Welcome: typeof import('./src/components/Aside/Welcome.vue')['default']
   }
 }
