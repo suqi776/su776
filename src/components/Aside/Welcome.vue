@@ -66,7 +66,7 @@ onMounted(() => {
     <h2 class="mb-2 text-2xl font-bold">
       问候
     </h2>
-    <p>欢迎来自 <span class="cursor-pointer text-[var(--my-p-bg)] font-bold">{{ ipInfo?.province }}{{ ipInfo?.city }}</span> 的小伙伴！</p>
+    <p>欢迎来自 <span class="text-[var(--my-p-bg)] font-bold">{{ ipInfo?.province }}{{ ipInfo?.city }}</span> 的小伙伴！</p>
     <p>我们距离约有 {{ distance }} 公里！</p>
     <p>您的IP地址为：{{ ipInfo?.ip }}</p>
   </div>
