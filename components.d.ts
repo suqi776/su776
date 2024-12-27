@@ -7,11 +7,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    Archive: typeof import('./src/components/Archive.vue')['default']
     Aside: typeof import('./src/components/Aside/index.vue')['default']
-    Category: typeof import('./src/components/Category.vue')['default']
     CountdownCard: typeof import('./src/components/Aside/CountdownCard.vue')['default']
-    Dome: typeof import('./src/components/Demo/Dome.vue)['default']
     Dome1: typeof import('./src/components/Demo/Dome1.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
@@ -27,9 +24,7 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ShortList: typeof import('./src/components/ShortList.vue')['default']
-    ShortsList: typeof import('./src/components/ShortList.vue')['default']
     SvgIcon: typeof import('./src/components/Aside/SvgIcon.vue')['default']
-    Tag: typeof import('./src/components/Tag.vue')['default']
     TagCategoryList: typeof import('./src/components/TagCategoryList.vue')['default']
     Tags: typeof import('./src/components/Aside/Tags.vue')['default']
     Toc: typeof import('./src/components/Aside/Toc.vue')['default']
