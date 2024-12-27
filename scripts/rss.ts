@@ -25,12 +25,14 @@ async function run() {
 async function buildBlogRSS() {
   const files = await fg('pages/posts/*.md')
 
+  console.log(`Building RSS feed...${files}`)
+
   const options = {
     title: 'Su77',
     description: 'Su77\' Blog',
     id: 'https://suqi.me/',
     link: 'https://suqi.me/',
-    copyright: 'CC BY-NC-SA 4.0 2021 © Anthony Fu',
+    copyright: 'CC BY-NC-SA 4.0 © 2024 Su77\'s Blog',
     feedLinks: {
       json: 'https://suqi.me/feed.json',
       atom: 'https://suqi.me/feed.atom',
@@ -41,11 +43,12 @@ async function buildBlogRSS() {
     await Promise.all(
       files.filter(i => !i.includes('index'))
         .map(async (i) => {
+          console.log(`Processing ${i}`)
           const raw = await fs.readFile(i, 'utf-8')
+
           const { data, content } = matter(raw)
 
-          if (data.lang !== 'en')
-            return
+          console.log(`Processing ${data}`)
 
           const html = markdown.render(content)
             .replace('src="/', `src="${DOMAIN}/`)
@@ -77,7 +80,7 @@ async function writeFeed(name: string, options: FeedOptions, items: Item[]) {
   const feed = new Feed(options)
 
   items.forEach(item => feed.addItem(item))
-  // items.forEach(i=> console.log(i.title, i.date))
+  // items.forEach(i => console.log(i.title, i.date))
 
   await fs.ensureDir(dirname(`./dist/${name}`))
   await fs.writeFile(`./dist/${name}.xml`, feed.rss2(), 'utf-8')
