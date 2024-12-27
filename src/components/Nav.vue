@@ -109,9 +109,9 @@ watch(() => route.path, () => {
           <div class="i-carbon-paint-brush cursor-pointer font-size-2xl card-hover-text" @click="toggleShow()" />
           <UseTheme v-if="isShow" class="use-theme pos-absolute right-0 top-64px" />
         </li>
-        <li class="flex items-center">
+        <!-- <li class="flex items-center">
           <a i-la-rss-square cursor-pointer font-size-2xl card-hover-text href="/feed" target="_blank" />
-        </li>
+        </li> -->
       </ul>
 
       <!-- Mobile Menu Button (Hamburger) -->
