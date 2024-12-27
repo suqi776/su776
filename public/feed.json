@@ -1,0 +1,13 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Su77",
+    "home_page_url": "https://suqi.me/",
+    "feed_url": "https://suqi.me/feed.json",
+    "description": "Su77' Blog",
+    "icon": "https://suqi.me/logo.png",
+    "author": {
+        "name": "Su77",
+        "url": "https://suqi.me"
+    },
+    "items": []
+}
