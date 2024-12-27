@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite --port 7777 --open && npx esno ./scripts/rss.ts",
-    "build": "vite-ssg build",
+    "dev": "vite --port 7777 --open",
+    "build": "vite-ssg build && npx esno ./scripts/rss.ts",
     "preview": "vite preview"
   },
   "dependencies": {
