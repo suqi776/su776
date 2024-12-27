@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { computed, defineProps, ref } from 'vue'
-
 // 接收属性
 const { label, percent } = defineProps({
   label: {

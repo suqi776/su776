@@ -11,6 +11,8 @@ declare module 'vue' {
     Aside: typeof import('./src/components/Aside/index.vue')['default']
     Category: typeof import('./src/components/Category.vue')['default']
     CountdownCard: typeof import('./src/components/Aside/CountdownCard.vue')['default']
+    Dome: typeof import('./src/components/Demo/Dome.vue)['default']
+    Dome1: typeof import('./src/components/Demo/Dome1.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     HomeText: typeof import('./src/components/HomeText.vue')['default']

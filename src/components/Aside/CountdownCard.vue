@@ -4,6 +4,13 @@ import dayOfYear from 'dayjs/plugin/dayOfYear'
 import isLeapYear from 'dayjs/plugin/isLeapYear'
 import { computed, ref } from 'vue'
 
+const { isTitle } = defineProps({
+  isTitle: {
+    default: true,
+    type: Boolean,
+  },
+})
+
 // 加载插件
 dayjs.extend(dayOfYear)
 dayjs.extend(isLeapYear)
@@ -58,7 +65,7 @@ function unflip() {
 
 <template>
   <div class="mb-2 h-200px perspective-1000 rounded-lg p-6 aside">
-    <h2 class="mb-2 text-2xl font-bold">
+    <h2 v-if="isTitle" class="mb-2 text-2xl font-bold">
       倒计时
     </h2>
     <!-- 容器，使用 perspective 以启用 3D 效果 -->
