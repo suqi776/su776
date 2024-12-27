@@ -1,6 +1,11 @@
 import type { Post } from '../types'
 import dayjs from 'dayjs'
+import Timezone from 'dayjs/plugin/timezone'
+import utc from 'dayjs/plugin/utc'
 import { useRouter } from 'vue-router/auto'
+
+dayjs.extend(utc)
+dayjs.extend(Timezone)
 
 // 通用数据获取函数
 function useRoutesData(prefix: string): Post[] {
@@ -14,7 +19,7 @@ function useRoutesData(prefix: string): Post[] {
       return {
         path: frontmatter.path || i.path,
         title: frontmatter.title || '未命名',
-        date: dayjs(frontmatter.date).format('YYYY-MM-DD HH:mm:ss') || 'No date',
+        date: dayjs.tz(frontmatter.date, 'Asia/Shanghai').format('YYYY-MM-DD HH:mm:ss') || 'No date',
         desc: frontmatter.desc || '',
         tags: frontmatter.tags || [],
         layout: frontmatter.layout || '',

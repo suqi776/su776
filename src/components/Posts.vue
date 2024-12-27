@@ -1,5 +1,8 @@
 <script setup lang='ts'>
 import dayjs from 'dayjs'
+import Timezone from 'dayjs/plugin/timezone'
+import utc from 'dayjs/plugin/utc'
+
 // 定义组件的属性
 const { frontmatter } = defineProps({
   frontmatter: {
@@ -7,12 +10,13 @@ const { frontmatter } = defineProps({
     required: true,
   },
 })
-
+dayjs.extend(utc)
+dayjs.extend(Timezone)
 // 创建一个引用，用于访问文章内容
 const content = ref<HTMLDivElement>()
 
 const date = computed(() => {
-  return dayjs(frontmatter.date).format('YYYY-MM-DD HH:mm:ss')
+  return dayjs.tz(frontmatter.date, 'Asia/Shanghai').format('YYYY-MM-DD HH:mm:ss')
 })
 
 useHead({
