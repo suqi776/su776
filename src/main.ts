@@ -16,6 +16,8 @@ import '@shikijs/twoslash/style-rich.css'
 
 // 代码复制
 import './composables/codeCopy'
+// 代码分组
+import './composables/codeGroup'
 
 export const createApp = ViteSSG(
   App,

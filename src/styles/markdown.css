@@ -518,3 +518,49 @@ h6:focus .header-anchor {
 .custom-block.info {
   background-color: rgba(var(--color-note-bg), 0.1)
 }
+
+/* 代码块 */
+
+.code-group {
+  margin: 20px 0;
+}
+
+.tabs input[type="radio"] {
+  display: none; /* 隐藏实际的 radio 按钮 */
+}
+
+.tabs {
+  height: 36px;
+  position: absolute;
+  z-index: 2;
+  line-height: 36px;
+  border-bottom: 1px solid var(--my-p-bg);
+  width: 100%;
+}
+
+.tabs label {
+  cursor: pointer;
+  padding-left: 32px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.tabs input[type="radio"]:checked + label {
+  color: var(--my-p-bg);
+}
+
+.blocks div[class*=language-] {
+  display: none;
+}
+
+div[class*=language-].active, .blocks.active {
+  display: flex;
+}
+
+.code-group div[class*=language-] {
+  margin: 0;
+}
+
+.code-group .blocks div[class*=language-] .lang {
+  display: none;
+}
