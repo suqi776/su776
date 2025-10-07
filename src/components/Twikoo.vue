@@ -12,7 +12,7 @@ onMounted(async () => {
   if (typeof window !== 'undefined') {
     const twikoo = await import('twikoo')
     twikoo.init({
-      envId: 'https://twikoo.suqi.xyz',
+      envId: 'https://twikoo.9999977.xyz/',
       el: '#tcomment',
     })
   }
