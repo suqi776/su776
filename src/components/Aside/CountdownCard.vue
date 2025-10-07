@@ -16,7 +16,7 @@ dayjs.extend(dayOfYear)
 dayjs.extend(isLeapYear)
 
 // 目标日期（春节）
-const targetDate = '2025-01-29'
+const targetDate = '2026-02-17'
 const today = dayjs()
 
 // 计算剩余天数
