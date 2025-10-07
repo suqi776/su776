@@ -1,9 +1,13 @@
 ---
 title: Cursor 使用指南：AI 驱动的现代化 IDE
-date: 2024-03-25
-tags: ['IDE', 'AI', '开发工具']
-categories: ['开发工具']
-description: 详细介绍 Cursor IDE 的使用方法，包括 AI 功能、快捷键、配置等。
+date: 2025-03-31
+tags:
+  - IDE
+  - AI
+  - 开发工具
+category:
+  - 开发工具
+type: post
 ---
 
 # Cursor 使用指南：AI 驱动的现代化 IDE
